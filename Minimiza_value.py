@@ -33,13 +33,14 @@ def buscar_Mayor_Caso(lista,cantidad,numeros):
         lista.pop(0)
     x+=1
     while(x<round(cantidad/numeros)):
-        lista.sort(reverse=S)
+        if(x+1 == round(cantidad/numeros)):
+            lista.sort(reverse=True)
         for i in range(0,numeros):
             Union[i].append( lista[i])
         for i in range(0,numeros):
             lista.pop(0)
         x+=1
-        S=True if S else False
+        lista.sort(reverse=False)
     
     respuesta =['']
     Union.sort(reverse=True)
