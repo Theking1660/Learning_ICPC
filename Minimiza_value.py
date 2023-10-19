@@ -26,18 +26,20 @@ def buscar_Mayor_Caso(lista,cantidad,numeros):
     lista.sort()
     Union=[]
     x = 0
-
+    S=True
     for i in range(0,numeros):
         Union.append( [lista[i]])
     for i in range(0,numeros):
         lista.pop(0)
     x+=1
     while(x<round(cantidad/numeros)):
+        lista.sort(reverse=S)
         for i in range(0,numeros):
             Union[i].append( lista[i])
         for i in range(0,numeros):
             lista.pop(0)
         x+=1
+        S=True if S else False
     
     respuesta =['']
     Union.sort(reverse=True)
